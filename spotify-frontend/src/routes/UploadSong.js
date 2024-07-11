@@ -46,19 +46,23 @@ const UploadSong = () => {
                         <IconText
                             iconName={"material-symbols:home"}
                             displayText={"Home"}
+                            targetLink={"/home"}
                             active
                         />
                         <IconText
                             iconName={"material-symbols:search-rounded"}
                             displayText={"Search"}
+                            targetLink={"/search"}
                         />
                         <IconText
                             iconName={"icomoon-free:books"}
                             displayText={"Library"}
+                            targetLink={"/library"}
                         />
                         <IconText
                             iconName={"material-symbols:library-music-sharp"}
                             displayText={"My Music"}
+                            targetLink={"/myMusic"}
                         />
                     </div>
                     <div className="pt-5">
@@ -100,7 +104,7 @@ const UploadSong = () => {
                     </div>
                 </div>
                 <div className="content p-8 pt-0 overflow-auto">
-                    <div className="text-2xl font-semibold mb-5 text-white mt-8">
+                    <div className="text-2xl font-semibold mb-5 text-white mt-8" >
                         Upload Your Music
                     </div>
                     <div className="w-2/3 flex space-x-3">

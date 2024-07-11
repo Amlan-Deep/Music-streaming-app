@@ -8,8 +8,11 @@ import songContext from "../contexts/songContext";
 import CreatePlaylistModal from "../modals/CreatePlaylistModal";
 import AddToPlaylistModal from "../modals/AddToPlaylistModal";
 import {makeAuthenticatedPOSTRequest} from "../utils/serverHelpers";
+import { useNavigate } from "react-router-dom";
+
 
 const LoggedInContainer = ({children, curActiveScreen}) => {
+    const navigate = useNavigate();
     const [createPlaylistModalOpen, setCreatePlaylistModalOpen] =
         useState(false);
     const [addToPlaylistModalOpen, setAddToPlaylistModalOpen] = useState(false);
@@ -177,7 +180,12 @@ const LoggedInContainer = ({children, curActiveScreen}) => {
                                 <div className="h-1/2 border-r border-white"></div>
                             </div>
                             <div className="w-1/3 flex justify-around h-full items-center">
-                                <TextWithHover displayText={"Upload Song"} />
+                            <button 
+                                className="text-white hover:bg-grey font-medium py-2 px-2 rounded focus:outline-none focus:shadow-outline" 
+                                onClick={() => navigate('/uploadSong')}
+                                    >
+                                Upload Song
+                                </button>
                                 <div className="bg-white w-10 h-10 flex items-center justify-center rounded-full font-semibold cursor-pointer">
                                     AC
                                 </div>
