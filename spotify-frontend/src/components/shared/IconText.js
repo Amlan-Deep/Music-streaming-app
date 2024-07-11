@@ -1,27 +1,21 @@
-import {Icon} from "@iconify/react";
-import {Link} from "react-router-dom";
-
-const IconText = ({iconName, displayText,active}) => {
+const TextInput = ({label, placeholder, value, setValue}) => {
     return (
-            <div
-                className="flex items-center justify-start cursor-pointer">
-                <div className="px-5 py-2">
-                    <Icon
-                        icon={iconName}
-                        color={active? "white":"grey" }
-                        fontSize={30}
-                    />
-                </div>
-                <div
-                     className={`${
-                        active ? "text-white" : "text-gray-400"
-                    } text-sm font-semibold hover:text-white`}
-                >
-                    {displayText}
-                </div>
-                
-            </div>
+        <div className="textInputDiv flex flex-col space-y-2 w-full">
+            <label for={label} className="font-semibold">
+                {label}
+            </label>
+            <input
+                type="password"
+                placeholder={placeholder}
+                className="p-3 border border-gray-400 border-solid rounded placeholder-gray-500"
+                id={label}
+                value={value}
+                onChange={(e) => {
+                    setValue(e.target.value);
+                }}
+            />
+        </div>
     );
 };
 
-export default IconText;
+export default TextInput;
